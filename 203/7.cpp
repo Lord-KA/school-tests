@@ -28,16 +28,21 @@ int main() //TODO test this shit
     std::cout << cnt << ' ' << m << ' ' << k << std::endl; //DEBUG
     file.close();
         
-    return 0;
     file.open("input");
     file.seekp(q * m, std::fstream::beg);
     file.write(reinterpret_cast<char*>(&cnt), q);
-    for(int32_t i = m, anotherTemp; i <= k; ++i){
+    file.seekp(q * (m + 1), std::fstream::beg);
+    for(int32_t i = m + 1, anotherTemp; i < k; ++i){
         file.read(reinterpret_cast<char*>(&anotherTemp), q);
-        file.seekp(q, std::fstream::cur);
+        file.seekp(q * i, std::fstream::beg);
         file.write(reinterpret_cast<char*>(&temp), q);
+        file.seekp(q * (i + 1), std::fstream::beg);
         temp = anotherTemp;
+        std::cout << temp << std::endl;
     }
+
+    file.seekp(0, std::fstream::end);
+    file.write(reinterpret_cast<char*>(&temp), q);
     file.close();
 }
 
