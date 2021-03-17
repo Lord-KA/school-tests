@@ -11,19 +11,22 @@ int main()
     std::getline(std::cin, str);
     std::stringstream inp;
     inp << str;
-    
-    for(float tmp = 0; inp >> tmp;)
-        First.push_back(tmp);
-    
+    float a = -1; 
+    size_t cnt = 0;
+    for(float tmp = 0; inp >> tmp;){
+        if (cnt == 1)
+            a = tmp;
+        else
+            First.push_back(tmp);
+        ++cnt;
+    }
     std::vector<float> Ans(First.size() + 1, 0);
-    float a = 1; //TODO find out what the fuck is a;
     
     for (long long int i = 0; i < First.size(); ++i){
         Ans[i + 1] += First[i];
         Ans[i] -= a * First[i];
     }
         
-    Ans.pop_back();
     for(auto elem : Ans)
         std::cout << elem << ' ';
     
