@@ -4,7 +4,7 @@
 int main()
 {
     std::ifstream file("input");
-    float inp,
+    double inp,
           delta = 0.00000001,
           k = 100;
     size_t cnt = 0;

@@ -5,7 +5,7 @@
 int main()
 {
     std::ifstream file("input");
-    float inp,
+    double inp,
           ans;
     size_t cnt = 0;
     while(file >> inp)

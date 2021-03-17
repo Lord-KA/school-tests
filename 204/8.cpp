@@ -19,6 +19,6 @@ int main()
         }
         file.get(inp);
     }
-    std::cout << cnt;
+    std::cout << ans;
 
 }
