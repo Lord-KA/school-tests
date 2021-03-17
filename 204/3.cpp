@@ -10,16 +10,16 @@ int main()
     //std::cout << Map.size() << ' ' << Map[0].size(); //DEBUG
     Map[0][n - 1] = 2;
     Map[0][0] = std::pow(2, n);
-    /* //DEBUG
+    /*//DEBUG
     for (size_t i=0; i < m; ++i){
         for(size_t j=0; j < n; ++j)
             std::cout << Map[i][j] << ' ';
         std::cout << std::endl;
     }
+    std::cout << std::endl;
     */
-    for (size_t i=n-2; i > 0; i--)
+    for (long long int i=n-2; i > 0; i--)
         Map[0][i] = 2 * Map[0][i + 1];
-
     for (size_t i=1; i < m; i++)
     {
         for (size_t j=0; j < n - 1; j++)
