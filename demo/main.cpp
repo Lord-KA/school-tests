@@ -2,7 +2,7 @@
 #include <fstream>
 
 int main(){
-    
+    //    
     std::fstream file("output.txt", std::fstream::in | std::fstream::out | std::fstream::binary);
     int32_t s = 10, q = 4;
     file.write(reinterpret_cast<char*>(&s), q);
