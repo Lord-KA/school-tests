@@ -6,11 +6,10 @@ int main()
 {
     std::fstream file("input");
     
-    size_t k = 0, q = 4, pos = -1, neg = -1;
-    for (int32_t i = 0, tmp; !file.eof(); ++i){
-        ++k;
+    size_t k = file.tellg() / sizeof(int32_t), q = 4, pos = -1, neg = -1;
+    for (int32_t i = 0, tmp; i < k; ++i){
         file.read(reinterpret_cast<char*>(&tmp), q);
-        std::cout << tmp << '\n';
+        // std::cout << tmp << '\n'; //DEBUG
         if (neg == -1 && tmp < 0)
             neg = i;
         if (tmp > 0)
