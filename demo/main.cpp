@@ -15,7 +15,6 @@ int main(){
     file.close();
 
 
-
     file.open("output.txt", std::fstream::in | std::fstream::out | std::fstream::binary);
     int32_t one, three;
     file.read(reinterpret_cast<char*>(&one), q);
